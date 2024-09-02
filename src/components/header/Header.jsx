@@ -11,11 +11,9 @@ export const Header = () => {
   };
 
   return (
-    <div className="w-full flex justify-center">
+    <div className="w-full flex justify-center ">
       <div className="container max-w-[1216px] flex justify-between fixed bg-white py-4">
-        <div>
-          <MetaBlogIcon />
-        </div>
+        <MetaBlogIcon />
         <div className="md:flex gap-6 hidden">
           <button>Home</button>
           <button>Blog</button>
