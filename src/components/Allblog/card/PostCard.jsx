@@ -54,14 +54,16 @@ const PostCardData = [
 export const PostCard = () => {
   return (
     <div className="w-full h-auto mt-10">
-      <div className="container flex justify-between flex-wrap">
+      <div className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 h-auto gap-5">
         {PostCardData.map((card) => (
-          <div className="w-[392px] h-[476px] flex flex-col gap-3 mb-5 border rounded-md border-[#E8E8EA]">
-            <img
-              src={card.url}
-              alt=""
-              className="w-[360px] h-[240px] mx-auto pt-3 rounded-md"
-            />
+          <div className="w-auto h-[476px] flex flex-col gap-5 mb-5 border rounded-md border-[#E8E8EA]">
+            <div
+              className={`bg-cover w-full h-[240px] rounded-md`}
+              style={{
+                backgroundImage: `url(${card.url})`,
+                backgroundPosition: "center",
+              }}
+            ></div>
             <div className="ml-5">{<BadgeTextPurple text={card.title} />}</div>
             <h3 className="text-[#181A2A] ml-5 mr-5 mt-2 font-semibold text-[24px] leading-7">
               {card.description}

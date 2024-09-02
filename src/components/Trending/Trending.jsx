@@ -37,11 +37,11 @@ export const Trending = () => {
       <h3 className="container max-w-[1216px] m-auto text-[#181A2A] text-[24px] leading-7 font-bold mb-6">
         Trending
       </h3>
-      <div className="container max-w-[1216px] flex justify-between gap-4 m-auto">
+      <div className="container max-w-[1216px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 h-auto gap-5 m-auto">
         {TradingPostCardData.map((trendingcard) => (
           <div className="flex">
             <div
-              className={`bg-cover rounded-lg w-full h-[320px] flex justify-end flex-col`}
+              className={`rounded-lg w-full h-[320px] flex justify-end flex-col`}
               style={{
                 backgroundImage: `url(${trendingcard.url})`,
                 backgroundSize: "cover",

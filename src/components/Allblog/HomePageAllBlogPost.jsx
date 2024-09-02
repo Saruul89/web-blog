@@ -10,19 +10,19 @@ import { PostCard } from "./card/PostCard";
 export const AllBlogPost = () => {
   return (
     <div className="w-full flex justify-center mt-[100px]">
-      <div className="container max-w-[1216px]">
+      <div className="container max-w-[1216px]" id="blog">
         <h3 className="text-[#181A2A] text-[24px] leading-7 font-bold mb-4">
           All Blog Post
         </h3>
-        <div className="flex mt-10 justify-between">
-          <div className="flex gap-5 ">
+        <div className="flex mt-10 md:justify-between flex-wrap">
+          <div className="flex md:gap-5 gap-2">
             <All />
             <Design />
             <Travel />
             <Technology />
             <Branding />
           </div>
-          <div>
+          <div className="ml-4">
             <ViewAll />
           </div>
         </div>

@@ -1,10 +1,10 @@
 export const SearchIcon = () => {
   return (
-    <div className="flex justify-center items-center rounded-lg bg-[#F4F4F5]">
+    <div className="flex justify-center items-center rounded-lg pr-3 bg-[#F4F4F5]">
       <input
         type="search"
         placeholder="Search"
-        className="text-black p-2 bg-[#F4F4F5]"
+        className="text-black pl-3 bg-[#F4F4F5]"
       />
       <svg
         width="16"

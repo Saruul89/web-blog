@@ -1,9 +1,9 @@
-import AllBlogPostPage from "@/components/pages/AllBlogPostPage";
+import BlogListing from "@/components/pages/BlogListingPage";
 
-export default function AllBlog() {
+export default function BlogList() {
   return (
     <main>
-      <AllBlogPostPage />
+      <BlogListing />
     </main>
   );
 }
