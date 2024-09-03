@@ -15,9 +15,15 @@ export const Header = () => {
       <div className="container max-w-[1216px] flex justify-between fixed bg-white py-4">
         <MetaBlogIcon />
         <div className="md:flex gap-6 hidden">
-          <button>Home</button>
-          <button>Blog</button>
-          <button>Contact</button>
+          <button>
+            <a href="./">Home</a>
+          </button>
+          <button>
+            <a href="./allblog">Blog</a>
+          </button>
+          <button>
+            <a href="./contactus">Contact</a>
+          </button>
         </div>
         <div className="hidden md:flex">
           <SearchIcon />

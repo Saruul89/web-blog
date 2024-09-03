@@ -4,6 +4,7 @@ import { Header } from "../header/Header";
 import { LoadMore } from "../helpcomponents/buttons/LoadMore";
 import { PostCard } from "./card/PostCard";
 
+
 export const AllBlogOnePage = () => {
   return (
     <div className="w-full">

@@ -23,14 +23,18 @@ export const AllBlogPost = () => {
             <Branding />
           </div>
           <div className="ml-4">
-            <ViewAll />
+            <a href="./allblog">
+              <ViewAll />
+            </a>
           </div>
         </div>
         <div>
           <PostCard />
         </div>
         <div className="flex justify-center">
-          <LoadMore />
+          <a href="./allblog">
+            <LoadMore />
+          </a>
         </div>
       </div>
     </div>
