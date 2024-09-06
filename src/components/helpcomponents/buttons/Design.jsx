@@ -1,6 +1,11 @@
-export const Design = () => {
+export const Design = ({ handleFilter, isSelectColor }) => {
   return (
-    <button className="text-[#495057] font-[12px] leading-[25px]">
+    <button
+      onClick={() => handleFilter("design")}
+      className={`font-[12px] leading-[25px] ${
+        isSelectColor ? "text-orange-400" : "text-[#495057]"
+      }`}
+    >
       Design
     </button>
   );

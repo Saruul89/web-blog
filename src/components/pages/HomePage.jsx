@@ -5,7 +5,7 @@ import { AllBlogPost } from "../Allblog/HomePageAllBlogPost";
 import { About } from "../About/About";
 import { Footer } from "../footer/Footer";
 
-export default function HomePage() {
+const HomePage = () => {
   return (
     <div>
       <Header />
@@ -16,4 +16,5 @@ export default function HomePage() {
       <Footer />
     </div>
   );
-}
+};
+export default HomePage;

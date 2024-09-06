@@ -3,6 +3,7 @@ import { MetaBlogIcon } from "../helpcomponents/buttons/svgnuud/headerSvg/MetaBl
 import { SearchIcon } from "../helpcomponents/buttons/svgnuud/headerSvg/SearchIcon";
 import { HumIcon } from "./HumIcon";
 import { HumMenu } from "./Hummenu";
+import Link from "next/link";
 
 export const Header = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -13,16 +14,18 @@ export const Header = () => {
   return (
     <div className="w-full flex justify-center ">
       <div className="container max-w-[1216px] flex justify-between fixed bg-white py-4">
-        <MetaBlogIcon />
+        <a href="/">
+          <MetaBlogIcon />
+        </a>
         <div className="md:flex gap-6 hidden">
           <button>
-            <a href="./">Home</a>
+            <a href="/">Home</a>
           </button>
           <button>
-            <a href="./allblog">Blog</a>
+            <a href="/bloglisting">Blog</a>
           </button>
           <button>
-            <a href="./contactus">Contact</a>
+            <a href="/contactus">Contact</a>
           </button>
         </div>
         <div className="hidden md:flex">

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   FbIcons,
   InstaIcon,
@@ -24,9 +25,15 @@ export const About = () => {
           </div>
         </div>
         <div className="flex md:flex-col text-[#3B3C4A] gap-4 text-base items-start pt-10">
-          <button>Home</button>
-          <button>Blog</button>
-          <button>Contact</button>
+          <button>
+            <a href="./">Home</a>
+          </button>
+          <Link href="/bloglisting">
+            <button>Blog</button>
+          </Link>
+          <Link href="/contactus">
+            <button>Contact</button>
+          </Link>
         </div>
         <div className="flex gap-5 pt-10 pr-[170px]">
           <FbIcons />

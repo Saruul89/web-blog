@@ -1,9 +1,10 @@
-import SinglePostPage from "@/components/pages/SinglePostPage";
+import SinglePage from "./[id]";
 
-export default function SinglePage() {
+const Page = () => {
   return (
-    <main>
-      <SinglePostPage />
-    </main>
+    <div>
+      <SinglePage />
+    </div>
   );
-}
+};
+export default Page;
