@@ -17,7 +17,7 @@ export default function PageNotFound() {
                 are looking for.
               </p>
               <button className="border rounded-md bg-[#4B6BFB] w-[35%] text-[#FFFFFF] p-1">
-                Back To Home
+                <a href="./">Back To Home</a>
               </button>
             </div>
           </div>

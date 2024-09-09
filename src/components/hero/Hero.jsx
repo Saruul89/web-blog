@@ -6,54 +6,66 @@ import { ForwardArrow } from "../helpcomponents/ForwardArrow";
 import Link from "next/link";
 
 export const Hero = () => {
-  const [pages, setPages] = useState(1);
-  const [trendingContentNumber, setTrendingContentNumber] = useState(1); //datag 9 bolgoh
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const [article, setArticle] = useState([]);
   const fetchData = () => {
-    fetch(
-      `https://dev.to/api/articles?per_page=${trendingContentNumber}&per_page=${pages}`
-    )
+    fetch(`https://dev.to/api/articles?per_page=10&top=3`)
       .then((response) => response.json())
       .then((data) => setArticle(data));
   };
 
-  const handlePage = () => {
-    setPages(pages + 1);
+  const handleNextPage = () => {
+    setCurrentIndex((currentIndex) => {
+      if (currentIndex === article.length - 1) {
+        return 0;
+      } else {
+        return currentIndex + 1;
+      }
+    });
+  };
+
+  const handlePrevPage = () => {
+    setCurrentIndex((currentIndex) => {
+      if (currentIndex === 0) {
+        return article.length - 1;
+      } else {
+        return currentIndex - 1;
+      }
+    });
   };
 
   useEffect(() => {
     fetchData();
-  }, [trendingContentNumber]);
+  }, []);
 
   return (
     <div className="w-full flex justify-center mt-[100px]" id="hero">
       <div className="container max-w-[1216px]" id="home">
-        {article.map((article) => {
-          return (
-            <Link href={`/singlepost/${article.id}`}>
-              <div
-                className="h-[600px] bg-cover bg-center rounded-3xl flex items-end"
-                style={{
-                  backgroundImage: `url(${article.cover_image})`,
-                }}
-              >
-                <div className="md:w-[598px] md:h-[252px] w-full bg-slate-50 pl-5 ml-3 mb-3 mr-3 rounded-lg pt-5 pb-5 flex flex-col gap-3">
-                  <TechnologyPurpleButton text={article.tag_list[0]} />
-                  <h1 className="text-[#181A2A] font-semibold text-[36px] leading-10 line-clamp-3">
-                    {article.description}
-                  </h1>
-                  <Date />
-                </div>
-              </div>
-            </Link>
-          );
-        })}
+        <Link href={`/singlepost/${article[currentIndex]?.id}`}>
+          <div
+            className="h-[600px] bg-cover bg-center rounded-3xl flex items-end"
+            style={{
+              backgroundImage: `url(${article[currentIndex]?.cover_image})`,
+            }}
+          >
+            <div className="md:w-[598px] md:h-[252px] w-full bg-slate-50 pl-5 ml-3 mb-3 mr-3 rounded-lg pt-5 pb-5 flex flex-col gap-3">
+              <TechnologyPurpleButton
+                text={article[currentIndex]?.tag_list[0]}
+              />
+              <h1 className="text-[#181A2A] font-semibold text-[36px] leading-10 line-clamp-3">
+                {article[currentIndex]?.description}
+              </h1>
+              <Date />
+            </div>
+          </div>
+        </Link>
 
         <div className="flex gap-4 text-[#696A75] justify-end items-end mt-3">
-          <button onClick={handlePage}>
+          <button onClick={handlePrevPage}>
             <BackArrow />
           </button>
-          <button onClick={handlePage}>
+          <button onClick={handleNextPage}>
             <ForwardArrow />
           </button>
         </div>

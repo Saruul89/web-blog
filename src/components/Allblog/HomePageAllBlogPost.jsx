@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, createContext, useContext } from "react";
 import { All } from "../helpcomponents/buttons/All";
 import { Branding } from "../helpcomponents/buttons/Branding";
 import { Design } from "../helpcomponents/buttons/Design";
@@ -13,6 +13,9 @@ export const AllBlogPost = () => {
   const [filterAllBlogPost, setFilterAllBlogPost] = useState("");
   const [filterContentNumber, setFilterContentNumber] = useState(9); //datag 9 bolgoh
   const [articles, setArticles] = useState([]);
+
+  // const allArticles = ["All", "Design", "Travel", "Technology", "Branding"];
+
   const fetchData = () => {
     fetch(
       `https://dev.to/api/articles?per_page=${filterContentNumber}&tag=${filterAllBlogPost}`
@@ -48,17 +51,21 @@ export const AllBlogPost = () => {
         </h3>
         <div className="flex mt-10 md:justify-between flex-wrap">
           <div className="flex md:gap-5 gap-2">
-            <All handleFilter={handleFilter} isSelectColor={isSelectColor} />
-            <Design handleFilter={handleFilter} isSelectColor={isSelectColor} />
-            <Travel handleFilter={handleFilter} isSelectColor={isSelectColor} />
-            <Technology
-              handleFilter={handleFilter}
-              isSelectColor={isSelectColor}
-            />
-            <Branding
-              handleFilter={handleFilter}
-              isSelectColor={isSelectColor}
-            />
+            <All handleFilter={handleFilter} />
+            <div onClick={isSelectColor}>
+              <Design
+                handleFilter={handleFilter}
+                isSelectColor={isSelectColor}
+              />
+            </div>
+            <div onClick={isSelectColor}>
+              <Travel
+                handleFilter={handleFilter}
+                isSelectColor={isSelectColor}
+              />
+            </div>
+            <Technology handleFilter={handleFilter} />
+            <Branding handleFilter={handleFilter} />
           </div>
           <div className="ml-4">
             <a href="./bloglisting">

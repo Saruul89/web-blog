@@ -4,7 +4,6 @@ import SinglePostPage from "@/components/pages/SinglePostPage";
 
 export default function SinglePage() {
   const router = useRouter();
-  console.log("router.query.id", router.query.id);
 
   const [article, setArticle] = useState([]);
   const fetchData = () => {
