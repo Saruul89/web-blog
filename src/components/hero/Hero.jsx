@@ -10,7 +10,7 @@ export const Hero = () => {
 
   const [article, setArticle] = useState([]);
   const fetchData = () => {
-    fetch(`https://dev.to/api/articles?per_page=10&top=3`)
+    fetch(`https://dev.to/api/articles/latest?per_page=10&top=3`)
       .then((response) => response.json())
       .then((data) => setArticle(data));
   };
@@ -44,7 +44,7 @@ export const Hero = () => {
       <div className="container max-w-[1216px]" id="home">
         <Link href={`/singlepost/${article[currentIndex]?.id}`}>
           <div
-            className="h-[600px] bg-cover bg-center rounded-3xl flex items-end"
+            className="h-[600px] bg-cover bg-center rounded-3xl flex items-end hover:scale-[1.01] duration-200"
             style={{
               backgroundImage: `url(${article[currentIndex]?.cover_image})`,
             }}

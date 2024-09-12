@@ -36,10 +36,18 @@ export const About = () => {
           </Link>
         </div>
         <div className="flex gap-5 pt-10 pr-[170px]">
-          <FbIcons />
-          <TwitterIcon />
-          <InstaIcon />
-          <LinkidnIcon />
+          <a href="https://www.facebook.com/Munkhsaruul.Rikudou">
+            <FbIcons />
+          </a>
+          <Link href="https://x.com/home">
+            <TwitterIcon />
+          </Link>
+          <Link href="https://instagramm.com">
+            <InstaIcon />
+          </Link>
+          <Link href="https://linkidn.com">
+            <LinkidnIcon />
+          </Link>
         </div>
       </div>
     </div>

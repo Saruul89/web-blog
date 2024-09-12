@@ -1,6 +1,7 @@
-import { MetaBlogIcon } from "../helpcomponents/buttons/svgnuud/headerSvg/MetaBlogIcon";
-import { SearchIcon } from "../helpcomponents/buttons/svgnuud/headerSvg/SearchIcon";
+import { MetaBlogIcon } from "../../helpcomponents/buttons/svgnuud/headerSvg/MetaBlogIcon";
+import { SearchIcon } from "../../helpcomponents/buttons/svgnuud/headerSvg/SearchIcon";
 import { CloseIcon } from "./CloseIcon";
+import Search from "./Search";
 
 export const HumMenu = ({ onClick, handleMenu }) => {
   return (
@@ -16,16 +17,16 @@ export const HumMenu = ({ onClick, handleMenu }) => {
       <hr />
       <div className="flex flex-col gap-3 items-start pt-4 pb-4 text-[16px] leading-7 font-normal text-gray-600 dark:text-[#D1D5DB]">
         <button onClick={handleMenu}>
-          <a href="#home">Home</a>
+          <a href="/">Home</a>
         </button>
         <button onClick={handleMenu}>
-          <a href="#blog">Blog</a>
+          <a href="/bloglisting">Blog</a>
         </button>
         <button onClick={handleMenu}>
-          <a href="#contact">Contact</a>
+          <a href="/contactus">Contact</a>
         </button>
+        <Search />
       </div>
-      <SearchIcon />
     </div>
   );
 };

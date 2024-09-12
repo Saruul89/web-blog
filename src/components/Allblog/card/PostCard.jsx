@@ -14,7 +14,7 @@ export const PostCard = ({ articles }) => {
                     <img
                       src={article?.cover_image}
                       alt=""
-                      className="w-full h-[240px] rounded-xl p-3"
+                      className="w-full h-[240px] rounded-xl p-3 hover:scale-[1.03] hover:transition-[300]"
                     />
                   </div>
                   <div className="ml-5 ">
@@ -23,7 +23,9 @@ export const PostCard = ({ articles }) => {
                   <h3 className="text-[#181A2A] ml-5 mr-5 mt-2 font-semibold text-[24px] bg- leading-7 line-clamp-3">
                     {article?.description}
                   </h3>
-                  <p className="text-[#97989F] text-base ml-5">2024.09.04</p>
+                  <p className="text-[#97989F] text-base ml-5">
+                    {article?.published_timestamp}
+                  </p>
                 </div>
               </Link>
             );

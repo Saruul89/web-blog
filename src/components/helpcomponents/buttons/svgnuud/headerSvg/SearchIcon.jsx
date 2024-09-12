@@ -1,11 +1,6 @@
 export const SearchIcon = () => {
   return (
     <div className="flex justify-center items-center rounded-lg pr-3 bg-[#F4F4F5]">
-      <input
-        type="search"
-        placeholder="Search"
-        className="text-black pl-3 bg-[#F4F4F5]"
-      />
       <svg
         width="16"
         height="16"

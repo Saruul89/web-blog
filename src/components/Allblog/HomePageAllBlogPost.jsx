@@ -14,11 +14,9 @@ export const AllBlogPost = () => {
   const [filterContentNumber, setFilterContentNumber] = useState(9); //datag 9 bolgoh
   const [articles, setArticles] = useState([]);
 
-  // const allArticles = ["All", "Design", "Travel", "Technology", "Branding"];
-
   const fetchData = () => {
     fetch(
-      `https://dev.to/api/articles?per_page=${filterContentNumber}&tag=${filterAllBlogPost}`
+      `https://dev.to/api/articles/latest?per_page=${filterContentNumber}&tag=${filterAllBlogPost}`
     )
       .then((response) => response?.json())
       .then((data) => setArticles(data));
@@ -51,23 +49,29 @@ export const AllBlogPost = () => {
         </h3>
         <div className="flex mt-10 md:justify-between flex-wrap">
           <div className="flex md:gap-5 gap-2">
-            <All handleFilter={handleFilter} />
-            <div onClick={isSelectColor}>
+            <div className="hover:text-orange-400">
+              <All handleFilter={handleFilter} />
+            </div>
+            <div onClick={isSelectColor} className="hover:text-orange-400">
               <Design
                 handleFilter={handleFilter}
                 isSelectColor={isSelectColor}
               />
             </div>
-            <div onClick={isSelectColor}>
+            <div onClick={isSelectColor} className="hover:text-orange-400">
               <Travel
                 handleFilter={handleFilter}
                 isSelectColor={isSelectColor}
               />
             </div>
-            <Technology handleFilter={handleFilter} />
-            <Branding handleFilter={handleFilter} />
+            <div className="hover:text-orange-400">
+              <Technology handleFilter={handleFilter} />
+            </div>
+            <div className="hover:text-orange-400">
+              <Branding handleFilter={handleFilter} />
+            </div>
           </div>
-          <div className="ml-4">
+          <div className="ml-4 hover:text-orange-400">
             <a href="./bloglisting">
               <ViewAll />
             </a>

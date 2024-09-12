@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { MetaBlogIcon } from "../helpcomponents/buttons/svgnuud/headerSvg/MetaBlogIcon";
-import { SearchIcon } from "../helpcomponents/buttons/svgnuud/headerSvg/SearchIcon";
+import { MetaBlogIcon } from "../../helpcomponents/buttons/svgnuud/headerSvg/MetaBlogIcon";
 import { HumIcon } from "./HumIcon";
 import { HumMenu } from "./Hummenu";
-import Link from "next/link";
+import Search from "./Search";
 
 export const Header = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -18,18 +17,18 @@ export const Header = () => {
           <MetaBlogIcon />
         </a>
         <div className="md:flex gap-6 hidden">
-          <button>
+          <button className="hover:border-b-2 border-orange-300 duration-100">
             <a href="/">Home</a>
           </button>
-          <button>
+          <button className="hover:border-b-2 border-orange-300 duration-100">
             <a href="/bloglisting">Blog</a>
           </button>
-          <button>
+          <button className="hover:border-b-2 border-orange-300 duration-100">
             <a href="/contactus">Contact</a>
           </button>
         </div>
         <div className="hidden md:flex">
-          <SearchIcon />
+          <Search />
         </div>
         <div className="block md:hidden">
           <div>
@@ -38,7 +37,6 @@ export const Header = () => {
                 <HumMenu />
               </button>
             ) : (
-              //buttonii deerh handleMenu gdg bol haalga ni, tgeed humMenu-giin onClick-iin hajuu taliinh uud ni yma
               <button onClick={handleMenu}>
                 <HumIcon />
               </button>

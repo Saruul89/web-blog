@@ -2,17 +2,16 @@ import { useEffect, useState } from "react";
 import { TechnologyPurpleButton } from "../helpcomponents/badge/BadgeBgPurple";
 import Link from "next/link";
 
-export const Trending = () => {
-  const [trendingContentNumber, setTrendingContentNumber] = useState(4); //datag 9 bolgoh
+export const Trending = ({}) => {
   const [article, setArticle] = useState([]);
   const fetchData = () => {
-    fetch(`https://dev.to/api/articles?per_page=${trendingContentNumber}`)
+    fetch(`https://dev.to/api/articles/latest?per_page=4&top=5`)
       .then((response) => response.json())
       .then((data) => setArticle(data));
   };
   useEffect(() => {
     fetchData();
-  }, [trendingContentNumber]);
+  }, []);
 
   return (
     <div className="w-full flex flex-col mt-[50px]">
@@ -23,20 +22,20 @@ export const Trending = () => {
         {article.map((article) => {
           return (
             <div className="flex">
-              <Link href={`/singlepost/${article.id}`}>
+              <Link href={`/singlepost/${article?.id}`}>
                 <div
-                  className={`rounded-lg w-full h-[320px] flex justify-end flex-col bg-[#18191b] bg-blend-soft-light hover:scale-[1.1] hover:ease-in hover:transition-[300]`}
+                  className={`rounded-lg w-full h-[320px] flex justify-end flex-col bg-gray-600 bg-blend-soft-light hover:scale-[1.03] hover:ease-in hover:transition-[300]`}
                   style={{
-                    backgroundImage: `url(${article.cover_image})`,
+                    backgroundImage: `url(${article?.cover_image})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
                 >
                   <div className="ml-5 mb-3">
-                    <TechnologyPurpleButton text={article.tag_list[0]} />
+                    <TechnologyPurpleButton text={article?.tag_list[0]} />
                   </div>
                   <p className="text-[#FFFFFF] text-[18px] leading-7 mx-5 mb-3 line-clamp-2">
-                    {article.description}
+                    {article?.description}
                   </p>
                 </div>
               </Link>

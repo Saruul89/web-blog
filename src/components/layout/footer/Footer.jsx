@@ -1,5 +1,5 @@
+import { MetaBlogIcon } from "@/components/helpcomponents/buttons/svgnuud/headerSvg/MetaBlogIcon";
 import Link from "next/link";
-import { MetaBlogIcon } from "../helpcomponents/buttons/svgnuud/headerSvg/MetaBlogIcon";
 
 export const Footer = () => {
   return (
@@ -9,7 +9,9 @@ export const Footer = () => {
         id="contact"
       >
         <div className="md:flex justify-between pl-5 md:pl-0">
-          <MetaBlogIcon />
+          <a href="./">
+            <MetaBlogIcon />
+          </a>
           <div className="flex gap-6 pt-5">
             <Link href="/privacy">
               <button className="border-r-2 border-[#dfe1e4] pr-5">

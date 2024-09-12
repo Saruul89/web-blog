@@ -1,15 +1,8 @@
-import { useEffect, useState } from "react";
-import { About } from "../About/About";
-import { Footer } from "../footer/Footer";
-import { Header } from "../header/Header";
-import { useRouter } from "next/router";
-
 export default function SinglePostPage({ article }) {
   return (
     <div className="w-full">
       <div className="container max-w-[1216px] flex justify-center m-auto">
         <div>
-          <Header />
           <div className="container max-w-[680px] mt-[150px]">
             <h1 className="font-semibold text-[#181A2A] text-4xl w-full">
               {article?.title}
@@ -59,8 +52,6 @@ export default function SinglePostPage({ article }) {
           </div>
         </div>
       </div>
-      <About />
-      <Footer />
     </div>
   );
 }
