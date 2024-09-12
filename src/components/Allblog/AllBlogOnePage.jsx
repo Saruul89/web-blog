@@ -5,12 +5,17 @@ import { PostCard } from "./card/PostCard";
 const AllBlogOnePage = () => {
   const [filterContentNumber, setFilterContentNumber] = useState(12); //datag 12 bolgoh
   const [articles, setArticles] = useState([]);
-  const fetchData = () => {
-    fetch(
-      `https://dev.to/api/articles/latest?per_page=${filterContentNumber}&top=7`
-    )
-      .then((response) => response?.json())
-      .then((data) => setArticles(data));
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        `https://dev.to/api/articles/latest?per_page=${filterContentNumber}&top=7`
+      );
+      const data = await response.json();
+      setArticles(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {

@@ -53,7 +53,7 @@ const ContactUsComponent = () => {
                     placeholder="Write a message"
                     className="border border-yellow-400 p-1 rounded h-[130px]"
                   />
-                  <button className="border rounded-md bg-[#4B6BFB] w-[25%] text-[#FFFFFF] p-1">
+                  <button className="border rounded-md bg-[#4B6BFB] md:w-[25%] w-[40%] m-auto text-[#FFFFFF] p-1">
                     Send Message
                   </button>
                 </div>

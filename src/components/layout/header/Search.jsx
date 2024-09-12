@@ -7,10 +7,14 @@ const Search = () => {
   const [articlesForSearch, setArticlesForSearch] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
 
-  const fetchData = () => {
-    fetch("https://dev.to/api/articles?per_page=100")
-      .then((response) => response?.json())
-      .then((data) => setArticlesForSearch(data));
+  const fetchData = async () => {
+    try {
+      const response = await fetch("https://dev.to/api/articles?per_page=100");
+      const data = await response.json();
+      setArticlesForSearch(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   if (typeof window !== "undefined") {

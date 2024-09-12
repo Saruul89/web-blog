@@ -14,12 +14,16 @@ export const AllBlogPost = () => {
   const [filterContentNumber, setFilterContentNumber] = useState(9); //datag 9 bolgoh
   const [articles, setArticles] = useState([]);
 
-  const fetchData = () => {
-    fetch(
-      `https://dev.to/api/articles/latest?per_page=${filterContentNumber}&tag=${filterAllBlogPost}`
-    )
-      .then((response) => response?.json())
-      .then((data) => setArticles(data));
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        `https://dev.to/api/articles/latest?per_page=${filterContentNumber}&tag=${filterAllBlogPost}`
+      );
+      const data = await response.json();
+      setArticles(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {

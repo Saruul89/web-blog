@@ -4,11 +4,19 @@ import Link from "next/link";
 
 export const Trending = ({}) => {
   const [article, setArticle] = useState([]);
-  const fetchData = () => {
-    fetch(`https://dev.to/api/articles/latest?per_page=4&top=5`)
-      .then((response) => response.json())
-      .then((data) => setArticle(data));
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        `https://dev.to/api/articles/latest?per_page=4&top=5`
+      );
+      const data = await response.json();
+      setArticle(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
+
   useEffect(() => {
     fetchData();
   }, []);
