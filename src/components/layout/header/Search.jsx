@@ -25,7 +25,7 @@ const Search = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [searchValue]);
 
   const handleInputChange = (event) => {
     setIsOpen(true);

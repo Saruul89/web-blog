@@ -4,17 +4,24 @@ import SinglePostPage from "@/components/pages/SinglePostPage";
 
 export default function SinglePage() {
   const router = useRouter();
-
   const [article, setArticle] = useState([]);
-  const fetchData = () => {
-    fetch(`https://dev.to/api/articles/${router.query.id}`)
-      .then((response) => response.json())
-      .then((data) => setArticle(data));
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        `https://dev.to/api/articles/${router.query.id}`
+      );
+      const data = await response.json();
+      setArticle(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <main>
       <SinglePostPage article={article} />

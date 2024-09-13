@@ -6,13 +6,10 @@ const SearchDown = ({ filterSearch, setSearchValue, setIsOpen, isOpen }) => {
     setIsOpen(false);
     setSearchValue("");
   };
-  console.log(filterSearch);
 
   return (
     <div
-      className={`${
-        isOpen ? "flex" : "hidden"
-      } flex-col gap-2 bg-[#F4F4F5] p-2 overflow-hidden rounded-b-lg w-[229px] duration-200`}
+      className={`${ isOpen ? "flex" : "hidden"} flex-col gap-2 bg-[#F4F4F5] p-2 overflow-hidden rounded-b-lg w-[229px] duration-200`}
     >
       {filterSearch?.map((article) => {
         return (

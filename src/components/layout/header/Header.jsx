@@ -12,7 +12,7 @@ export const Header = () => {
 
   return (
     <div className="w-full flex justify-center ">
-      <div className="container max-w-[1216px] flex justify-between fixed bg-white py-4">
+      <div className="container max-w-[1216px] flex justify-between fixed z-10 bg-white py-4">
         <a href="/">
           <MetaBlogIcon />
         </a>

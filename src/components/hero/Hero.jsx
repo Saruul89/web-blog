@@ -51,7 +51,7 @@ export const Hero = () => {
       <div className="container max-w-[1216px]" id="home">
         <Link href={`/singlepost/${article[currentIndex]?.id}`}>
           <div
-            className="h-[600px] bg-cover bg-center rounded-3xl flex items-end hover:scale-[1.01] duration-200"
+            className="h-[600px] bg-cover bg-center rounded-3xl flex items-end"
             style={{
               backgroundImage: `url(${article[currentIndex]?.cover_image})`,
             }}
