@@ -6,6 +6,8 @@ export default function SinglePage() {
   const router = useRouter();
   const [article, setArticle] = useState([]);
 
+  const id = router.query.id;
+
   const fetchData = async () => {
     try {
       const response = await fetch(
@@ -18,9 +20,11 @@ export default function SinglePage() {
     }
   };
 
+  console.log(id);
+
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [id]);
 
   return (
     <main>

@@ -38,8 +38,7 @@ export default function SinglePostPage({ article }) {
               dolorem?
             </p>
             <p className="text-2xl font-semibold mb-4 mt-4">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Exercitationem.
+              {article.description}
             </p>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis

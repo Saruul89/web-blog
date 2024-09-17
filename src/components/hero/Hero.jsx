@@ -68,11 +68,11 @@ export const Hero = () => {
           </div>
         </Link>
 
-        <div className="flex gap-4 text-[#696A75] justify-end items-end mt-3">
-          <button onClick={handlePrevPage}>
+        <div className="flex gap-4 text-[#696A75] justify-end items-end mt-3 duration-150">
+          <button className="duration-200" onClick={handlePrevPage}>
             <BackArrow />
           </button>
-          <button onClick={handleNextPage}>
+          <button className="duration-200" onClick={handleNextPage}>
             <ForwardArrow />
           </button>
         </div>
