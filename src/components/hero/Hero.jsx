@@ -7,7 +7,6 @@ import Link from "next/link";
 
 export const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const [article, setArticle] = useState([]);
 
   const fetchData = async () => {
